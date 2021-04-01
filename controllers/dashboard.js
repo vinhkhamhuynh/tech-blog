@@ -1,6 +1,6 @@
 const router = require("./api/userRoutes");
 
-router.get('/login', (req, res)=> {
+router.get('/dashboard', async (req, res)=> {
     res.render('login')
 });
 

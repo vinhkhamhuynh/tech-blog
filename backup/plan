@@ -1,0 +1,12 @@
+user go to localhost:3001/ get homepage
+    homepage with display blog that created by user
+
+if user click on dashboard 
+    if user not login redirect to login page 
+    if user logged in display posts by user and txt area to create new post
+
+if user click on login with display log in on left , create new account on right
+
+if user click on tech blog . take uer back to homepage
+
+if user click home , take user back to homepage 

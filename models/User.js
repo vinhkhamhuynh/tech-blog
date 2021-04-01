@@ -16,11 +16,21 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-   
+
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,6 +40,7 @@ User.init(
     },
   },
   {
+    // use hooks to hash user pw b4 storing new user info to db
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
