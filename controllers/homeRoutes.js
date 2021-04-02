@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models')
+const withAuth = require('../utils/auth')
 
 
 //render homepage
@@ -59,6 +60,26 @@ res.render('single-post', {
 
 });
 
+
+//once loggin in user taken to dashboard 
+router.get('/dashboard', withAuth, async(req, res) => {
+  try{
+    const userData = await User.findByPk (req.session.user_id, {
+      attributes: {exlude: ['password']},
+      include: [{ model: Post}],
+    });
+    const user = userData.get({ plain: true});
+    res.render('dashboard',{
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
 //login route
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -68,15 +89,16 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//signup route
-router.get('/signup', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/dashboard');
-    return;
-  }
-  res.render('signup');
 
-});
+// //signup route
+// router.get('/signup', (req, res) => {
+//   if (req.session.logged_in) {
+//     res.redirect('/dashboard');
+//     return;
+//   }
+//   res.render('signup');
+
+// });
 
 
 
