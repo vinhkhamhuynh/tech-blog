@@ -21,19 +21,23 @@ Creating a blog with login in and log out capability. Once loggin, user can crea
 Please run the following command to install required software:
 
 ```
-npm install	npm start
+npm install	
+create db in mysql workbench
+npm start
 ```
 
 
 ## Usage
 
-These are the technologies and languages use for this project: mysql, node js, 
+These are the technologies and languages use for this project: mysql, node js, html, css , 
 
-Deployed GitHub Link:   will be up soon
+Deployed Heroku Link:   will be up soon
 
 Github Repository Link: https://github.com/vinhkhamhuynh/tech-blog
   
-![homepage of the website](asset)
+![homepage of the website](./public/asset/homepage-screenshot.PNG)
+![dashboard of the website](./public/asset/dashboard-screenshot.PNG)
+![signin-signup of the website](./public/asset/login-signup-screenshot.PNG)
   
    
 ## License 
