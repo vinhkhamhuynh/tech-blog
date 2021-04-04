@@ -31,8 +31,7 @@ npm start
 
 These are the technologies and languages use for this project: mysql, node js, html, css , 
 
-Deployed Heroku Link:   will be up soon
-
+Deployed Heroku Link:  https://vkh-techblog.herokuapp.com/
 Github Repository Link: https://github.com/vinhkhamhuynh/tech-blog
   
 ![homepage of the website](./public/asset/homepage-screenshot.PNG)
