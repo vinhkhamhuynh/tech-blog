@@ -7,7 +7,6 @@ const editPost = async (event) => {
         window.location.toString().split('/').length - 1
     ];
 
-    // alert(title + " " + content+" "+id);
 
     const response = await fetch(`/api/post/${id}`, {
         method: 'PUT',
